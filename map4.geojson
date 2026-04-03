@@ -1,0 +1,45 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [114.1618, 22.2800]},
+      "properties": {"Name": "Lennon Wall Admiralty", "Description": "Post-it note tribute walls expressing collective identity and solidarity. Replicated across HK and globally.", "Category": "Memory and Solidarity", "Identity_Role": "Symbol of collective voice"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [114.1877, 22.2826]},
+      "properties": {"Name": "Victoria Park", "Description": "Traditional site of Tiananmen vigils since 1990. Banned in 2020 under NSL — loss of key collective memory space.", "Category": "Collective Memory", "Identity_Role": "Erasure of civic memory"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [114.1640, 22.2790]},
+      "properties": {"Name": "Umbrella Square 2014 Legacy", "Description": "Site of 79-day occupation in 2014. Foundational to protest identity carried into 2019.", "Category": "Historical Protest Site", "Identity_Role": "Origin of movement identity"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [114.2068, 22.4195]},
+      "properties": {"Name": "Chinese University of Hong Kong CUHK", "Description": "Major student mobilization centre. Clashes November 2019 — campus became protest fortress.", "Category": "University Mobilization", "Identity_Role": "Youth identity and place merged"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [114.1797, 22.3038]},
+      "properties": {"Name": "Hong Kong Polytechnic University PolyU", "Description": "11-day siege by police November 2019. Hundreds trapped. Most iconic and traumatic spatial event of the movement.", "Category": "University Mobilization", "Identity_Role": "Trauma embedded in place"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [114.1353, 22.2831]},
+      "properties": {"Name": "Hong Kong University HKU", "Description": "Deep ties to civic identity. Student unions at forefront of pro-democracy organizing.", "Category": "University Mobilization", "Identity_Role": "Institutional civic identity"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [114.1583, 22.2820]},
+      "properties": {"Name": "Statue Square", "Description": "Colonial-era public square used as gathering point for democratic resistance.", "Category": "Symbolic Space", "Identity_Role": "Colonial legacy reappropriated"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [114.1850, 22.3497]},
+      "properties": {"Name": "Lion Rock", "Description": "Iconic hillside above Kowloon. Protest banners hung here became global symbols of Hong Kong identity.", "Category": "Symbolic Space", "Identity_Role": "Landscape as political symbol"}
+    }
+  ]
+}

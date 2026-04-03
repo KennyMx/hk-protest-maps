@@ -1,0 +1,40 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [114.1617, 22.2804]},
+      "properties": {"Name": "Legislative Council Complex", "Description": "Stormed by protesters on July 1 2019 — symbolic reclaiming of legislative space", "Category": "Government Space", "Argument": "People claimed state space"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [114.1625, 22.2792]},
+      "properties": {"Name": "Government HQ Civic Square", "Description": "Fenced off after 2014 Umbrella Movement. Site of repeated occupation attempts in 2019", "Category": "Government Space", "Argument": "Fencing = denial of right to city"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [114.1655, 22.2797]},
+      "properties": {"Name": "Harcourt Road", "Description": "Major arterial road occupied by protesters — transformed from traffic corridor to protest boulevard", "Category": "Occupied Street", "Argument": "Streets repurposed as political space"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [114.1650, 22.2789]},
+      "properties": {"Name": "Admiralty MTR Station", "Description": "Transit hub turned protest convergence point. Closed repeatedly during clashes", "Category": "Transit Hub", "Argument": "Infrastructure channeled resistance"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [114.1610, 22.2815]},
+      "properties": {"Name": "Tamar Park", "Description": "Public green space adjacent to government complex — frequent rally site", "Category": "Public Space", "Argument": "Open space enabled mass gathering"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [114.1680, 22.2800]},
+      "properties": {"Name": "Protest Frontline Zone", "Description": "Barricade lines repeatedly erected here — contested boundary between protesters and police", "Category": "Frontline", "Argument": "Spatial boundary of contestation"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [114.1615, 22.2780]},
+      "properties": {"Name": "Central Government Offices", "Description": "Key target of protest marches — symbol of Beijing authority over Hong Kong", "Category": "Government Space", "Argument": "Symbol of contested sovereignty"}
+    }
+  ]
+}

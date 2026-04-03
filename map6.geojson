@@ -1,0 +1,65 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [114.1628, 22.2797]},
+      "properties": {"Name": "Admiralty LegCo", "Description": "Protesters occupied government district — transforming civic space into resistance territory", "Layer": "People Shaping Place", "Feedback_Direction": "People to Place"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [114.1694, 22.3193]},
+      "properties": {"Name": "Mong Kok Streets", "Description": "Protesters reclaimed commercial streets from state control — redefining public space", "Layer": "People Shaping Place", "Feedback_Direction": "People to Place"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [114.1797, 22.3038]},
+      "properties": {"Name": "PolyU Siege", "Description": "Protesters fortified university campus — repurposing educational space as refuge and frontline", "Layer": "People Shaping Place", "Feedback_Direction": "People to Place"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [114.2068, 22.4195]},
+      "properties": {"Name": "CUHK Campus", "Description": "Students defended campus as space of both learning and resistance — identity fused with place", "Layer": "People Shaping Place", "Feedback_Direction": "People to Place"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [113.9185, 22.3080]},
+      "properties": {"Name": "Airport Occupation", "Description": "Protesters shut down international gateway — disrupting Hong Kong global image and economy", "Layer": "People Shaping Place", "Feedback_Direction": "People to Place"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [114.1650, 22.2789]},
+      "properties": {"Name": "Admiralty MTR Hub", "Description": "Dense transit network channeled thousands of protesters rapidly across city — infrastructure enabled resistance", "Layer": "Place Shaping People", "Feedback_Direction": "Place to People"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [114.1837, 22.2802]},
+      "properties": {"Name": "Causeway Bay Density", "Description": "Commercial density enabled rapid dispersal and crowd camouflage tactics — urban form as protest tool", "Layer": "Place Shaping People", "Feedback_Direction": "Place to People"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [114.1877, 22.2826]},
+      "properties": {"Name": "Victoria Park", "Description": "Traditional civic space whose NSL closure signaled shrinking of public life — absence shaped identity", "Layer": "Place Shaping People", "Feedback_Direction": "Place to People"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [114.1625, 22.2792]},
+      "properties": {"Name": "Civic Square Fenced", "Description": "Post-2014 fencing physically prevented gathering — denial of space shaped protest tactics", "Layer": "Place Shaping People", "Feedback_Direction": "Place to People"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [114.1850, 22.3497]},
+      "properties": {"Name": "Lion Rock", "Description": "Hillside landscape became political symbol — topography amplified protest visibility globally", "Layer": "Place Shaping People", "Feedback_Direction": "Place to People"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [114.1628, 22.2797]},
+      "properties": {"Name": "NSL Zone Central", "Description": "After June 2020 — criminalization of protest reshaped everyday movement and identity in core districts", "Layer": "NSL Restriction", "Feedback_Direction": "Governance to Space"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [114.1694, 22.3193]},
+      "properties": {"Name": "NSL Zone Mong Kok", "Description": "High surveillance NSL enforcement changed how residents use and experience public space", "Layer": "NSL Restriction", "Feedback_Direction": "Governance to Space"}
+    }
+  ]
+}

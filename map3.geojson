@@ -1,0 +1,55 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [114.1747, 22.2783]},
+      "properties": {"Name": "Police HQ Wan Chai", "Description": "Main police headquarters — command centre for protest response", "Category": "Police Station", "Control_Level": "High"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [114.1551, 22.2823]},
+      "properties": {"Name": "Central Police Station", "Description": "Historic central station — front line enforcement during marches", "Category": "Police Station", "Control_Level": "High"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [114.1690, 22.3193]},
+      "properties": {"Name": "Mong Kok Police Station", "Description": "Key Kowloon enforcement node — heavy deployment during Mong Kok clashes", "Category": "Police Station", "Control_Level": "High"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [114.1722, 22.2975]},
+      "properties": {"Name": "Tsim Sha Tsui Police Station", "Description": "Tourist district policing — frequent baton charges in 2019", "Category": "Police Station", "Control_Level": "High"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [114.2218, 22.3032]},
+      "properties": {"Name": "Kowloon City Police Station", "Description": "Eastern Kowloon enforcement hub", "Category": "Police Station", "Control_Level": "Medium"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [114.1863, 22.3832]},
+      "properties": {"Name": "Sha Tin Police Station", "Description": "New Territories enforcement — New Town Plaza clashes", "Category": "Police Station", "Control_Level": "Medium"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [114.1628, 22.2797]},
+      "properties": {"Name": "NSL Core Enforcement Zone", "Description": "After June 2020 public protest criminalized under National Security Law. CCTV monitoring intensified.", "Category": "NSL Zone", "Control_Level": "Critical"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [114.1580, 22.2810]},
+      "properties": {"Name": "CCTV Dense Zone Central", "Description": "Highest concentration of surveillance cameras in Hong Kong", "Category": "Surveillance", "Control_Level": "High"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [114.1694, 22.3200]},
+      "properties": {"Name": "CCTV Dense Zone Mong Kok", "Description": "Dense commercial area with extensive camera network", "Category": "Surveillance", "Control_Level": "High"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [114.1740, 22.2960]},
+      "properties": {"Name": "CCTV Dense Zone Tsim Sha Tsui", "Description": "Tourist and transit hub — heavy CCTV presence", "Category": "Surveillance", "Control_Level": "High"}
+    }
+  ]
+}

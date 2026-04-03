@@ -1,0 +1,45 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [114.1628, 22.2797]},
+      "properties": {"Name": "Central & Admiralty", "Description": "Government HQ, LegCo Building — core protest zone", "Category": "Major Protest Zone", "Intensity": "High"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [114.1747, 22.2783]},
+      "properties": {"Name": "Wan Chai", "Description": "Police HQ, major march routes", "Category": "Major Protest Zone", "Intensity": "High"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [114.1837, 22.2802]},
+      "properties": {"Name": "Causeway Bay", "Description": "Commercial district, frequent protest gatherings", "Category": "Major Protest Zone", "Intensity": "High"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [114.1694, 22.3193]},
+      "properties": {"Name": "Mong Kok", "Description": "2014 and 2019 protest hub, dense residential area", "Category": "Major Protest Zone", "Intensity": "High"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [114.1722, 22.2975]},
+      "properties": {"Name": "Tsim Sha Tsui", "Description": "Tourist district turned protest corridor", "Category": "Significant Activity", "Intensity": "Medium"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [114.1863, 22.3832]},
+      "properties": {"Name": "Sha Tin", "Description": "Suburban front — New Town Plaza clashes 2019", "Category": "Significant Activity", "Intensity": "Medium"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [113.9769, 22.3916]},
+      "properties": {"Name": "Tuen Mun", "Description": "Outlying district protests and police confrontations", "Category": "Outlying Activity", "Intensity": "Low"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [113.9185, 22.3080]},
+      "properties": {"Name": "Hong Kong International Airport", "Description": "August 2019 — protesters occupied airport, hundreds of flights cancelled", "Category": "Major Protest Zone", "Intensity": "High"}
+    }
+  ]
+}

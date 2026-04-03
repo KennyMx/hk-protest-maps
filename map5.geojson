@@ -1,0 +1,55 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [114.1628, 22.2797]},
+      "properties": {"Name": "June 9 — 1 Million March", "Date": "2019-06-09", "Description": "1 million people march against extradition bill through Central and Admiralty", "Category": "Mass March", "Scale": "1,000,000 people"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [114.1617, 22.2804]},
+      "properties": {"Name": "June 12 — LegCo Siege", "Date": "2019-06-12", "Description": "Protesters surround LegCo — police use tear gas for first time", "Category": "Confrontation", "Scale": "50,000 people"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [114.1628, 22.2797]},
+      "properties": {"Name": "June 16 — 2 Million March", "Date": "2019-06-16", "Description": "2 million march — largest protest in Hong Kong history", "Category": "Mass March", "Scale": "2,000,000 people"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [114.1617, 22.2804]},
+      "properties": {"Name": "July 1 — LegCo Stormed", "Date": "2019-07-01", "Description": "Protesters break into and occupy LegCo — symbolic reclaiming of legislature", "Category": "Occupation", "Scale": "1,000 inside"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [114.1694, 22.3193]},
+      "properties": {"Name": "July 7 — Kowloon March", "Date": "2019-07-07", "Description": "Movement spreads to Kowloon — Mong Kok becomes protest front", "Category": "Mass March", "Scale": "50,000 people"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [114.0220, 22.4447]},
+      "properties": {"Name": "July 21 — Yuen Long Attack", "Date": "2019-07-21", "Description": "Mob attacks protesters and civilians at Yuen Long MTR station", "Category": "Violence", "Scale": "Dozens attacked"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [113.9185, 22.3080]},
+      "properties": {"Name": "August 12 — Airport Occupation", "Date": "2019-08-12", "Description": "Protesters occupy departure hall — hundreds of flights cancelled. Movement goes international.", "Category": "Occupation", "Scale": "5,000 protesters"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [114.2068, 22.4195]},
+      "properties": {"Name": "November 12 — CUHK Battle", "Date": "2019-11-12", "Description": "Police fire tear gas on CUHK campus — students defend university bridge", "Category": "Campus Siege", "Scale": "5,000 students"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [114.1797, 22.3038]},
+      "properties": {"Name": "November 18 — PolyU Siege", "Date": "2019-11-18", "Description": "Police besiege Polytechnic University for 11 days — hundreds trapped inside", "Category": "Campus Siege", "Scale": "Hundreds trapped"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [114.1628, 22.2797]},
+      "properties": {"Name": "June 30 — NSL Passed", "Date": "2020-06-30", "Description": "National Security Law passed — open protest effectively criminalized. Movement ends in public form.", "Category": "Legal Turning Point", "Scale": "City-wide impact"}
+    }
+  ]
+}
