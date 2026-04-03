@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_f3140c735487bc617a0112cd8c486eb4 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+</head>
+<body>
+    
+    
+<div style="position: fixed; top: 10px; left: 50%; transform: translateX(-50%);
+     background: rgba(0,0,0,0.88); color: white; padding: 12px 20px;
+     border-radius: 6px; font-family: Georgia, serif; z-index: 9999;
+     border-left: 4px solid #4488FF; text-align: center;">
+     <b style="font-size:14px;">MAP 3: State Governance & Surveillance Infrastructure</b><br>
+     <span style="font-size:11px; color:#aaa;">Police stations + surveillance density across Hong Kong (2019–2020)</span>
+</div>
+    
+<div style="position: fixed; bottom: 30px; left: 20px;
+     background: rgba(0,0,0,0.85); color: white; padding: 12px;
+     border-radius: 6px; font-family: Georgia, serif; z-index: 9999; font-size: 12px;">
+     <b>Legend</b><br>
+     <span style="color:#4488FF;">🛡 Police Station</span><br>
+     <span style="color:#FF4444;">⚠ NSL Core Zone</span><br>
+     <span style="font-size:11px; color:#aaa;">Heatmap = surveillance density estimate</span>
+</div>
+    
+            <div class="folium-map" id="map_f3140c735487bc617a0112cd8c486eb4" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_f3140c735487bc617a0112cd8c486eb4 = L.map(
+                "map_f3140c735487bc617a0112cd8c486eb4",
+                {
+                    center: [22.3193, 114.1694],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_715d323573c2888b6336dc5f937f5d2c = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_715d323573c2888b6336dc5f937f5d2c.addTo(map_f3140c735487bc617a0112cd8c486eb4);
+        
+    
+            var heat_map_e6b032b4833401625b59f237f7578961 = L.heatLayer(
+                [[22.2797, 114.1628, 1.0], [22.2783, 114.1747, 0.9], [22.3193, 114.1694, 0.8], [22.2975, 114.1722, 0.7], [22.2802, 114.1837, 0.6], [22.308, 113.9185, 0.9], [22.3832, 114.1863, 0.5], [22.281, 114.158, 0.8], [22.312, 114.218, 0.4], [22.34, 114.19, 0.4], [22.29, 114.15, 0.6], [22.305, 114.2, 0.5]],
+                {
+  "minOpacity": 0.5,
+  "maxZoom": 14,
+  "radius": 40,
+  "blur": 30,
+  "gradient": {
+  0.2: "#0000ff",
+  0.5: "#ff8c00",
+  1.0: "#ff0000",
+},
+}
+            );
+        
+    
+            heat_map_e6b032b4833401625b59f237f7578961.addTo(map_f3140c735487bc617a0112cd8c486eb4);
+        
+    
+            var marker_8e321a3855eb29841f0685b17479f6f0 = L.marker(
+                [22.2783, 114.1747],
+                {
+}
+            ).addTo(map_f3140c735487bc617a0112cd8c486eb4);
+        
+    
+            var icon_dca17acaa516ecf045edf701f77617fa = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shield",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_12c68faf5b6e7a59b41b77429822bdf7 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_4e7436efab79513975e312856766adf5 = $(`<div id="html_4e7436efab79513975e312856766adf5" style="width: 100.0%; height: 100.0%;"><b>Police HQ (Wan Chai)</b><br>Key enforcement node during 2019–2020 protests</div>`)[0];
+                popup_12c68faf5b6e7a59b41b77429822bdf7.setContent(html_4e7436efab79513975e312856766adf5);
+            
+        
+
+        marker_8e321a3855eb29841f0685b17479f6f0.bindPopup(popup_12c68faf5b6e7a59b41b77429822bdf7)
+        ;
+
+        
+    
+    
+            marker_8e321a3855eb29841f0685b17479f6f0.bindTooltip(
+                `<div>
+                     Police HQ (Wan Chai)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8e321a3855eb29841f0685b17479f6f0.setIcon(icon_dca17acaa516ecf045edf701f77617fa);
+            
+    
+            var marker_22bf9d825b5389ab97fb26378ccf2fc8 = L.marker(
+                [22.2823, 114.1551],
+                {
+}
+            ).addTo(map_f3140c735487bc617a0112cd8c486eb4);
+        
+    
+            var icon_c91325f0459deb70ce01e302bfc1f6e3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shield",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bcceffb9cfea32492b204d50cfa6fcdb = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_9aa51523d41e1a3112b43ea6261e4452 = $(`<div id="html_9aa51523d41e1a3112b43ea6261e4452" style="width: 100.0%; height: 100.0%;"><b>Central Police Station</b><br>Key enforcement node during 2019–2020 protests</div>`)[0];
+                popup_bcceffb9cfea32492b204d50cfa6fcdb.setContent(html_9aa51523d41e1a3112b43ea6261e4452);
+            
+        
+
+        marker_22bf9d825b5389ab97fb26378ccf2fc8.bindPopup(popup_bcceffb9cfea32492b204d50cfa6fcdb)
+        ;
+
+        
+    
+    
+            marker_22bf9d825b5389ab97fb26378ccf2fc8.bindTooltip(
+                `<div>
+                     Central Police Station
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_22bf9d825b5389ab97fb26378ccf2fc8.setIcon(icon_c91325f0459deb70ce01e302bfc1f6e3);
+            
+    
+            var marker_d0934c60712dbe5d3d049b3f900088d4 = L.marker(
+                [22.3175, 114.169],
+                {
+}
+            ).addTo(map_f3140c735487bc617a0112cd8c486eb4);
+        
+    
+            var icon_225c3e1a05d05b16f495c5736640d8ce = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shield",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f304072ef1a5b855f3addeff82adf0e9 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_97682a20c96ef721e8a7d5822b3d72e0 = $(`<div id="html_97682a20c96ef721e8a7d5822b3d72e0" style="width: 100.0%; height: 100.0%;"><b>Mong Kok Police Station</b><br>Key enforcement node during 2019–2020 protests</div>`)[0];
+                popup_f304072ef1a5b855f3addeff82adf0e9.setContent(html_97682a20c96ef721e8a7d5822b3d72e0);
+            
+        
+
+        marker_d0934c60712dbe5d3d049b3f900088d4.bindPopup(popup_f304072ef1a5b855f3addeff82adf0e9)
+        ;
+
+        
+    
+    
+            marker_d0934c60712dbe5d3d049b3f900088d4.bindTooltip(
+                `<div>
+                     Mong Kok Police Station
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d0934c60712dbe5d3d049b3f900088d4.setIcon(icon_225c3e1a05d05b16f495c5736640d8ce);
+            
+    
+            var marker_7e9e293572af0a30845f9bb5d4235beb = L.marker(
+                [22.2975, 114.1722],
+                {
+}
+            ).addTo(map_f3140c735487bc617a0112cd8c486eb4);
+        
+    
+            var icon_d3b4c6ca7b62a647752f794019918eac = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shield",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1c7958a039e0edac6f27c210755bd1bd = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_5c2a67bb6c53402cac655bfd261f35aa = $(`<div id="html_5c2a67bb6c53402cac655bfd261f35aa" style="width: 100.0%; height: 100.0%;"><b>Tsim Sha Tsui Police Station</b><br>Key enforcement node during 2019–2020 protests</div>`)[0];
+                popup_1c7958a039e0edac6f27c210755bd1bd.setContent(html_5c2a67bb6c53402cac655bfd261f35aa);
+            
+        
+
+        marker_7e9e293572af0a30845f9bb5d4235beb.bindPopup(popup_1c7958a039e0edac6f27c210755bd1bd)
+        ;
+
+        
+    
+    
+            marker_7e9e293572af0a30845f9bb5d4235beb.bindTooltip(
+                `<div>
+                     Tsim Sha Tsui Police Station
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7e9e293572af0a30845f9bb5d4235beb.setIcon(icon_d3b4c6ca7b62a647752f794019918eac);
+            
+    
+            var marker_fa70d5f2a7b85b8e05d7df68aabbd121 = L.marker(
+                [22.3032, 114.2218],
+                {
+}
+            ).addTo(map_f3140c735487bc617a0112cd8c486eb4);
+        
+    
+            var icon_71f47536eaaa2c5eb32fd67237efeb4a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shield",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_89f3f1eaf55f354ff05737822dd0562a = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_5041b3a277cdee76d1c1797f5de28c03 = $(`<div id="html_5041b3a277cdee76d1c1797f5de28c03" style="width: 100.0%; height: 100.0%;"><b>Kowloon City Police Station</b><br>Key enforcement node during 2019–2020 protests</div>`)[0];
+                popup_89f3f1eaf55f354ff05737822dd0562a.setContent(html_5041b3a277cdee76d1c1797f5de28c03);
+            
+        
+
+        marker_fa70d5f2a7b85b8e05d7df68aabbd121.bindPopup(popup_89f3f1eaf55f354ff05737822dd0562a)
+        ;
+
+        
+    
+    
+            marker_fa70d5f2a7b85b8e05d7df68aabbd121.bindTooltip(
+                `<div>
+                     Kowloon City Police Station
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_fa70d5f2a7b85b8e05d7df68aabbd121.setIcon(icon_71f47536eaaa2c5eb32fd67237efeb4a);
+            
+    
+            var marker_ec2868b055c00f9c6a4dcd3bceebf8fa = L.marker(
+                [22.3832, 114.1863],
+                {
+}
+            ).addTo(map_f3140c735487bc617a0112cd8c486eb4);
+        
+    
+            var icon_6d0d018ba8add573300bbd58c455f34b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shield",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4cbd1a776b51c65e89fd21d4e330c5cf = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_1d472942d991cf0797c4c212b3b0b128 = $(`<div id="html_1d472942d991cf0797c4c212b3b0b128" style="width: 100.0%; height: 100.0%;"><b>Sha Tin Police Station</b><br>Key enforcement node during 2019–2020 protests</div>`)[0];
+                popup_4cbd1a776b51c65e89fd21d4e330c5cf.setContent(html_1d472942d991cf0797c4c212b3b0b128);
+            
+        
+
+        marker_ec2868b055c00f9c6a4dcd3bceebf8fa.bindPopup(popup_4cbd1a776b51c65e89fd21d4e330c5cf)
+        ;
+
+        
+    
+    
+            marker_ec2868b055c00f9c6a4dcd3bceebf8fa.bindTooltip(
+                `<div>
+                     Sha Tin Police Station
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ec2868b055c00f9c6a4dcd3bceebf8fa.setIcon(icon_6d0d018ba8add573300bbd58c455f34b);
+            
+    
+            var marker_b9e0c455f355aaca1b6da3c1ca09a69e = L.marker(
+                [22.3562, 114.1477],
+                {
+}
+            ).addTo(map_f3140c735487bc617a0112cd8c486eb4);
+        
+    
+            var icon_2b2fd10a95bdd5b5dc0e998c56fe956a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shield",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9906d40d1c9283655a3d30041dabe6c3 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_56013aea682cb789a634cda2e5939675 = $(`<div id="html_56013aea682cb789a634cda2e5939675" style="width: 100.0%; height: 100.0%;"><b>Kwun Tong Police Station</b><br>Key enforcement node during 2019–2020 protests</div>`)[0];
+                popup_9906d40d1c9283655a3d30041dabe6c3.setContent(html_56013aea682cb789a634cda2e5939675);
+            
+        
+
+        marker_b9e0c455f355aaca1b6da3c1ca09a69e.bindPopup(popup_9906d40d1c9283655a3d30041dabe6c3)
+        ;
+
+        
+    
+    
+            marker_b9e0c455f355aaca1b6da3c1ca09a69e.bindTooltip(
+                `<div>
+                     Kwun Tong Police Station
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b9e0c455f355aaca1b6da3c1ca09a69e.setIcon(icon_2b2fd10a95bdd5b5dc0e998c56fe956a);
+            
+    
+            var marker_2851c466d1d0699fa38352c0506bf3f0 = L.marker(
+                [22.2916, 114.1436],
+                {
+}
+            ).addTo(map_f3140c735487bc617a0112cd8c486eb4);
+        
+    
+            var icon_d17c2d69e0686fe082d2adce93fcc55f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shield",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e4ebbc88ee52576ac73506f80c0f97f1 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_88fed26d3b8684e7546dcdec46c6d4ad = $(`<div id="html_88fed26d3b8684e7546dcdec46c6d4ad" style="width: 100.0%; height: 100.0%;"><b>Sham Shui Po Police Station</b><br>Key enforcement node during 2019–2020 protests</div>`)[0];
+                popup_e4ebbc88ee52576ac73506f80c0f97f1.setContent(html_88fed26d3b8684e7546dcdec46c6d4ad);
+            
+        
+
+        marker_2851c466d1d0699fa38352c0506bf3f0.bindPopup(popup_e4ebbc88ee52576ac73506f80c0f97f1)
+        ;
+
+        
+    
+    
+            marker_2851c466d1d0699fa38352c0506bf3f0.bindTooltip(
+                `<div>
+                     Sham Shui Po Police Station
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2851c466d1d0699fa38352c0506bf3f0.setIcon(icon_d17c2d69e0686fe082d2adce93fcc55f);
+            
+    
+            var marker_9a7df8386c9e418d48a040d1db85a449 = L.marker(
+                [22.3443, 114.1925],
+                {
+}
+            ).addTo(map_f3140c735487bc617a0112cd8c486eb4);
+        
+    
+            var icon_324e3ac8aad840451c5de47eb00c86e6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shield",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_51b0854db431f350726a77b1bef5d04d = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_d5b4254a2ecc51217a8198ee81a3c33e = $(`<div id="html_d5b4254a2ecc51217a8198ee81a3c33e" style="width: 100.0%; height: 100.0%;"><b>Diamond Hill Police Station</b><br>Key enforcement node during 2019–2020 protests</div>`)[0];
+                popup_51b0854db431f350726a77b1bef5d04d.setContent(html_d5b4254a2ecc51217a8198ee81a3c33e);
+            
+        
+
+        marker_9a7df8386c9e418d48a040d1db85a449.bindPopup(popup_51b0854db431f350726a77b1bef5d04d)
+        ;
+
+        
+    
+    
+            marker_9a7df8386c9e418d48a040d1db85a449.bindTooltip(
+                `<div>
+                     Diamond Hill Police Station
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9a7df8386c9e418d48a040d1db85a449.setIcon(icon_324e3ac8aad840451c5de47eb00c86e6);
+            
+    
+            var marker_faa11012c6200a44b2c85be3766d3f84 = L.marker(
+                [22.2797, 114.1628],
+                {
+}
+            ).addTo(map_f3140c735487bc617a0112cd8c486eb4);
+        
+    
+            var icon_c77fbfb60acc7e7ae01b566f2b833bcf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "exclamation-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9b74b3c0ef67504feed89dcffad9e315 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_418f3fea0fbcedb6b617fcb817a19477 = $(`<div id="html_418f3fea0fbcedb6b617fcb817a19477" style="width: 100.0%; height: 100.0%;"><b>National Security Law (NSL) Zone</b><br>After June 2020, public protest here became criminalized under NSL. CCTV monitoring intensified.</div>`)[0];
+                popup_9b74b3c0ef67504feed89dcffad9e315.setContent(html_418f3fea0fbcedb6b617fcb817a19477);
+            
+        
+
+        marker_faa11012c6200a44b2c85be3766d3f84.bindPopup(popup_9b74b3c0ef67504feed89dcffad9e315)
+        ;
+
+        
+    
+    
+            marker_faa11012c6200a44b2c85be3766d3f84.bindTooltip(
+                `<div>
+                     NSL Core Enforcement Zone
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_faa11012c6200a44b2c85be3766d3f84.setIcon(icon_c77fbfb60acc7e7ae01b566f2b833bcf);
+            
+</script>
+</html>

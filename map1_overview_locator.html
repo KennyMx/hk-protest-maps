@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_5fb41f699b60192fec910ca8eff96ca5 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<div style="position: fixed; top: 10px; left: 50%; transform: translateX(-50%);
+     background: rgba(0,0,0,0.85); color: white; padding: 12px 20px;
+     border-radius: 6px; font-family: Georgia, serif; z-index: 9999;
+     border: 1px solid #FF4444; text-align: center;">
+     <b style="font-size:15px;">MAP 1: Hong Kong Protest Geography (2019–2020)</b><br>
+     <span style="font-size:11px; color:#aaa;">Key protest sites across the city</span>
+</div>
+    
+<div style="position: fixed; bottom: 30px; left: 20px;
+     background: rgba(0,0,0,0.85); color: white; padding: 12px;
+     border-radius: 6px; font-family: Georgia, serif; z-index: 9999;
+     font-size: 12px; border: 1px solid #555;">
+     <b>Protest Intensity</b><br>
+     <span style="color:#FF4444;">● High intensity / Major events</span><br>
+     <span style="color:#FF8C00;">● Significant activity</span><br>
+     <span style="color:#FFD700;">● Moderate / Outlying</span>
+</div>
+    
+            <div class="folium-map" id="map_5fb41f699b60192fec910ca8eff96ca5" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_5fb41f699b60192fec910ca8eff96ca5 = L.map(
+                "map_5fb41f699b60192fec910ca8eff96ca5",
+                {
+                    center: [22.3193, 114.1694],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_d7fd949e90724dc448c55b084de33b20 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_d7fd949e90724dc448c55b084de33b20.addTo(map_5fb41f699b60192fec910ca8eff96ca5);
+        
+    
+            var circle_marker_22a4fabbd76f72f709126e60bb6708be = L.circleMarker(
+                [22.2797, 114.1628],
+                {"bubblingMouseEvents": true, "color": "#FF4444", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF4444", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_5fb41f699b60192fec910ca8eff96ca5);
+        
+    
+        var popup_636e0ec78bd41ed989db0d8f90565a9e = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_fb8ce60659033f3bcbdc1dc00b8df1bc = $(`<div id="html_fb8ce60659033f3bcbdc1dc00b8df1bc" style="width: 100.0%; height: 100.0%;"><b>Central & Admiralty</b><br>Government HQ, LegCo Building — core protest zone</div>`)[0];
+                popup_636e0ec78bd41ed989db0d8f90565a9e.setContent(html_fb8ce60659033f3bcbdc1dc00b8df1bc);
+            
+        
+
+        circle_marker_22a4fabbd76f72f709126e60bb6708be.bindPopup(popup_636e0ec78bd41ed989db0d8f90565a9e)
+        ;
+
+        
+    
+    
+            circle_marker_22a4fabbd76f72f709126e60bb6708be.bindTooltip(
+                `<div>
+                     Central & Admiralty
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d330ab5611cfcf914444a94c727bf5ac = L.circleMarker(
+                [22.2783, 114.1747],
+                {"bubblingMouseEvents": true, "color": "#FF8C00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF8C00", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_5fb41f699b60192fec910ca8eff96ca5);
+        
+    
+        var popup_3cc4acdccae8aa5a6e8c315963998755 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_fe1557c192dd9180d2041e4198cc4e6e = $(`<div id="html_fe1557c192dd9180d2041e4198cc4e6e" style="width: 100.0%; height: 100.0%;"><b>Wan Chai</b><br>Police HQ, major march routes</div>`)[0];
+                popup_3cc4acdccae8aa5a6e8c315963998755.setContent(html_fe1557c192dd9180d2041e4198cc4e6e);
+            
+        
+
+        circle_marker_d330ab5611cfcf914444a94c727bf5ac.bindPopup(popup_3cc4acdccae8aa5a6e8c315963998755)
+        ;
+
+        
+    
+    
+            circle_marker_d330ab5611cfcf914444a94c727bf5ac.bindTooltip(
+                `<div>
+                     Wan Chai
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2e0608522bf2831a393940ed4263357b = L.circleMarker(
+                [22.2802, 114.1837],
+                {"bubblingMouseEvents": true, "color": "#FFD700", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD700", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_5fb41f699b60192fec910ca8eff96ca5);
+        
+    
+        var popup_7c06c326ce54b1cbad654a23ca6d0586 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_a1c9908758221023dc024d272aebfdd7 = $(`<div id="html_a1c9908758221023dc024d272aebfdd7" style="width: 100.0%; height: 100.0%;"><b>Causeway Bay</b><br>Commercial district, frequent protest gatherings</div>`)[0];
+                popup_7c06c326ce54b1cbad654a23ca6d0586.setContent(html_a1c9908758221023dc024d272aebfdd7);
+            
+        
+
+        circle_marker_2e0608522bf2831a393940ed4263357b.bindPopup(popup_7c06c326ce54b1cbad654a23ca6d0586)
+        ;
+
+        
+    
+    
+            circle_marker_2e0608522bf2831a393940ed4263357b.bindTooltip(
+                `<div>
+                     Causeway Bay
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_24fa6f2381adb6d83d0fc960866822be = L.circleMarker(
+                [22.3193, 114.1694],
+                {"bubblingMouseEvents": true, "color": "#FF4444", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF4444", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_5fb41f699b60192fec910ca8eff96ca5);
+        
+    
+        var popup_aaccdb0f57382c072262f69cfbd1f2f3 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_69627bc297644e221c969a33e27ba042 = $(`<div id="html_69627bc297644e221c969a33e27ba042" style="width: 100.0%; height: 100.0%;"><b>Mong Kok (Kowloon)</b><br>2014 & 2019 protest hub, dense residential area</div>`)[0];
+                popup_aaccdb0f57382c072262f69cfbd1f2f3.setContent(html_69627bc297644e221c969a33e27ba042);
+            
+        
+
+        circle_marker_24fa6f2381adb6d83d0fc960866822be.bindPopup(popup_aaccdb0f57382c072262f69cfbd1f2f3)
+        ;
+
+        
+    
+    
+            circle_marker_24fa6f2381adb6d83d0fc960866822be.bindTooltip(
+                `<div>
+                     Mong Kok (Kowloon)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b9483438f3ae97a3592249620d184efd = L.circleMarker(
+                [22.2975, 114.1722],
+                {"bubblingMouseEvents": true, "color": "#FF8C00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF8C00", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_5fb41f699b60192fec910ca8eff96ca5);
+        
+    
+        var popup_400869d006ec9c608304e05a02845a5d = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_b7d38171a10ac0f858cff13c463b3aa2 = $(`<div id="html_b7d38171a10ac0f858cff13c463b3aa2" style="width: 100.0%; height: 100.0%;"><b>Tsim Sha Tsui</b><br>Tourist district turned protest corridor</div>`)[0];
+                popup_400869d006ec9c608304e05a02845a5d.setContent(html_b7d38171a10ac0f858cff13c463b3aa2);
+            
+        
+
+        circle_marker_b9483438f3ae97a3592249620d184efd.bindPopup(popup_400869d006ec9c608304e05a02845a5d)
+        ;
+
+        
+    
+    
+            circle_marker_b9483438f3ae97a3592249620d184efd.bindTooltip(
+                `<div>
+                     Tsim Sha Tsui
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3e9dccda7595779aeedbcd1430d23abd = L.circleMarker(
+                [22.3832, 114.1863],
+                {"bubblingMouseEvents": true, "color": "#FFD700", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD700", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_5fb41f699b60192fec910ca8eff96ca5);
+        
+    
+        var popup_ab00ac3deb1330f98aa1a1dbb5624a1a = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_70d3768c90b893012e5c9a8916ae6ad9 = $(`<div id="html_70d3768c90b893012e5c9a8916ae6ad9" style="width: 100.0%; height: 100.0%;"><b>Sha Tin (New Territories)</b><br>Suburban front — New Town Plaza clashes (2019)</div>`)[0];
+                popup_ab00ac3deb1330f98aa1a1dbb5624a1a.setContent(html_70d3768c90b893012e5c9a8916ae6ad9);
+            
+        
+
+        circle_marker_3e9dccda7595779aeedbcd1430d23abd.bindPopup(popup_ab00ac3deb1330f98aa1a1dbb5624a1a)
+        ;
+
+        
+    
+    
+            circle_marker_3e9dccda7595779aeedbcd1430d23abd.bindTooltip(
+                `<div>
+                     Sha Tin (New Territories)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6aa4978d960f0858912530d4129369ef = L.circleMarker(
+                [22.3916, 113.9769],
+                {"bubblingMouseEvents": true, "color": "#FFD700", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD700", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_5fb41f699b60192fec910ca8eff96ca5);
+        
+    
+        var popup_ac88a468681ffa6e523f2042f940617f = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_38d8e79bff63634a13d231392d4f9ec8 = $(`<div id="html_38d8e79bff63634a13d231392d4f9ec8" style="width: 100.0%; height: 100.0%;"><b>Tuen Mun</b><br>Outlying district protests; police confrontations</div>`)[0];
+                popup_ac88a468681ffa6e523f2042f940617f.setContent(html_38d8e79bff63634a13d231392d4f9ec8);
+            
+        
+
+        circle_marker_6aa4978d960f0858912530d4129369ef.bindPopup(popup_ac88a468681ffa6e523f2042f940617f)
+        ;
+
+        
+    
+    
+            circle_marker_6aa4978d960f0858912530d4129369ef.bindTooltip(
+                `<div>
+                     Tuen Mun
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5d1b78f7853ced9f0e443f216b35408d = L.circleMarker(
+                [22.308, 113.9185],
+                {"bubblingMouseEvents": true, "color": "#FF4444", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF4444", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_5fb41f699b60192fec910ca8eff96ca5);
+        
+    
+        var popup_45359bb537dd4308254c437bf9fa8100 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_f34588b463a2844a77e4e5eb15cbb798 = $(`<div id="html_f34588b463a2844a77e4e5eb15cbb798" style="width: 100.0%; height: 100.0%;"><b>Hong Kong International Airport</b><br>August 2019 — protesters occupied airport, mass disruption</div>`)[0];
+                popup_45359bb537dd4308254c437bf9fa8100.setContent(html_f34588b463a2844a77e4e5eb15cbb798);
+            
+        
+
+        circle_marker_5d1b78f7853ced9f0e443f216b35408d.bindPopup(popup_45359bb537dd4308254c437bf9fa8100)
+        ;
+
+        
+    
+    
+            circle_marker_5d1b78f7853ced9f0e443f216b35408d.bindTooltip(
+                `<div>
+                     Hong Kong International Airport
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>

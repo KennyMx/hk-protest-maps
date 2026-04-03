@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_989f544abe54edbddce443779efd4643 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<div style="position: fixed; top: 10px; left: 50%; transform: translateX(-50%);
+     background: rgba(255,255,255,0.95); color: #111; padding: 12px 20px;
+     border-radius: 6px; font-family: Georgia, serif; z-index: 9999;
+     border-left: 4px solid red; box-shadow: 0 2px 8px rgba(0,0,0,0.2); text-align: center;">
+     <b style="font-size:14px;">MAP 2: Spatial Politics — Claiming the Right to the City</b><br>
+     <span style="font-size:11px; color:#555;">Central & Admiralty: Contested Government Spaces (2019)</span>
+</div>
+    
+            <div class="folium-map" id="map_989f544abe54edbddce443779efd4643" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_989f544abe54edbddce443779efd4643 = L.map(
+                "map_989f544abe54edbddce443779efd4643",
+                {
+                    center: [22.281, 114.163],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 15,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_c9f2735ba8d70ca0aa2b467b9c5f62c4 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_c9f2735ba8d70ca0aa2b467b9c5f62c4.addTo(map_989f544abe54edbddce443779efd4643);
+        
+    
+            var marker_cbb1cb6955600905fb22a371ab579143 = L.marker(
+                [22.2804, 114.1617],
+                {
+}
+            ).addTo(map_989f544abe54edbddce443779efd4643);
+        
+    
+            var icon_d5e09f5f36938f2878e99b4221e6f17b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bfd37f1cb190e977dfdf0bd313322e05 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_40491f461fd3604e5459f327a1bf4a7b = $(`<div id="html_40491f461fd3604e5459f327a1bf4a7b" style="width: 100.0%; height: 100.0%;"><b>LegCo Complex</b><br>Stormed by protesters on July 1, 2019 — symbolic reclaiming of legislative space.</div>`)[0];
+                popup_bfd37f1cb190e977dfdf0bd313322e05.setContent(html_40491f461fd3604e5459f327a1bf4a7b);
+            
+        
+
+        marker_cbb1cb6955600905fb22a371ab579143.bindPopup(popup_bfd37f1cb190e977dfdf0bd313322e05)
+        ;
+
+        
+    
+    
+            marker_cbb1cb6955600905fb22a371ab579143.bindTooltip(
+                `<div>
+                     Legislative Council (LegCo) Complex
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_cbb1cb6955600905fb22a371ab579143.setIcon(icon_d5e09f5f36938f2878e99b4221e6f17b);
+            
+    
+            var marker_dd478545c90320d59cea11b6703c21ad = L.marker(
+                [22.2792, 114.1625],
+                {
+}
+            ).addTo(map_989f544abe54edbddce443779efd4643);
+        
+    
+            var icon_f7c5682f3147e11095683ca0a1d5c1ff = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_983e8fd36e173d182e4b44dab652a553 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_9dc3e69dfdd12b0aacf6e641990bae4f = $(`<div id="html_9dc3e69dfdd12b0aacf6e641990bae4f" style="width: 100.0%; height: 100.0%;"><b>Government HQ / Civic Square</b><br>Fenced off in 2014 after Umbrella Movement. Site of repeated occupation attempts in 2019.</div>`)[0];
+                popup_983e8fd36e173d182e4b44dab652a553.setContent(html_9dc3e69dfdd12b0aacf6e641990bae4f);
+            
+        
+
+        marker_dd478545c90320d59cea11b6703c21ad.bindPopup(popup_983e8fd36e173d182e4b44dab652a553)
+        ;
+
+        
+    
+    
+            marker_dd478545c90320d59cea11b6703c21ad.bindTooltip(
+                `<div>
+                     Government HQ (Civic Square)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_dd478545c90320d59cea11b6703c21ad.setIcon(icon_f7c5682f3147e11095683ca0a1d5c1ff);
+            
+    
+            var marker_8a539196917911e91da0df459446bf62 = L.marker(
+                [22.2797, 114.1655],
+                {
+}
+            ).addTo(map_989f544abe54edbddce443779efd4643);
+        
+    
+            var icon_0ff04f38e58934464bbf65b7610e01e3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "road",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d2010689849c4eb96642c7ebd7ac7e85 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_0561d1d6d129636fa9bf9ede3773aa58 = $(`<div id="html_0561d1d6d129636fa9bf9ede3773aa58" style="width: 100.0%; height: 100.0%;"><b>Harcourt Road</b><br>Major arterial road occupied by protesters — transformed from traffic corridor to protest boulevard.</div>`)[0];
+                popup_d2010689849c4eb96642c7ebd7ac7e85.setContent(html_0561d1d6d129636fa9bf9ede3773aa58);
+            
+        
+
+        marker_8a539196917911e91da0df459446bf62.bindPopup(popup_d2010689849c4eb96642c7ebd7ac7e85)
+        ;
+
+        
+    
+    
+            marker_8a539196917911e91da0df459446bf62.bindTooltip(
+                `<div>
+                     Harcourt Road
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8a539196917911e91da0df459446bf62.setIcon(icon_0ff04f38e58934464bbf65b7610e01e3);
+            
+    
+            var marker_538b77a88d56a3c7cf4f709528c71f34 = L.marker(
+                [22.2789, 114.165],
+                {
+}
+            ).addTo(map_989f544abe54edbddce443779efd4643);
+        
+    
+            var icon_05eb3fa2242995b9c240073f3d6e52f0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "train",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_19c4d893f82a6d113b410fbbf738ba4c = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_1bb5bad43b182b2b03bfcd040b5078da = $(`<div id="html_1bb5bad43b182b2b03bfcd040b5078da" style="width: 100.0%; height: 100.0%;"><b>Admiralty MTR Station</b><br>Transit hub turned protest convergence point. Closed repeatedly during clashes.</div>`)[0];
+                popup_19c4d893f82a6d113b410fbbf738ba4c.setContent(html_1bb5bad43b182b2b03bfcd040b5078da);
+            
+        
+
+        marker_538b77a88d56a3c7cf4f709528c71f34.bindPopup(popup_19c4d893f82a6d113b410fbbf738ba4c)
+        ;
+
+        
+    
+    
+            marker_538b77a88d56a3c7cf4f709528c71f34.bindTooltip(
+                `<div>
+                     Admiralty MTR Station
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_538b77a88d56a3c7cf4f709528c71f34.setIcon(icon_05eb3fa2242995b9c240073f3d6e52f0);
+            
+    
+            var marker_f7a8d6d03c6e4cb882ce6cec14efc7ff = L.marker(
+                [22.2815, 114.161],
+                {
+}
+            ).addTo(map_989f544abe54edbddce443779efd4643);
+        
+    
+            var icon_5560deb504af0215b91e36a3e9fcee8c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "tree-deciduous",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8da01433baa8a4158792d87d55f0a286 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_6672e27bd974a3737fac06739f8db77b = $(`<div id="html_6672e27bd974a3737fac06739f8db77b" style="width: 100.0%; height: 100.0%;"><b>Tamar Park</b><br>Public green space adjacent to government complex — frequent rally site.</div>`)[0];
+                popup_8da01433baa8a4158792d87d55f0a286.setContent(html_6672e27bd974a3737fac06739f8db77b);
+            
+        
+
+        marker_f7a8d6d03c6e4cb882ce6cec14efc7ff.bindPopup(popup_8da01433baa8a4158792d87d55f0a286)
+        ;
+
+        
+    
+    
+            marker_f7a8d6d03c6e4cb882ce6cec14efc7ff.bindTooltip(
+                `<div>
+                     Tamar Park
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f7a8d6d03c6e4cb882ce6cec14efc7ff.setIcon(icon_5560deb504af0215b91e36a3e9fcee8c);
+            
+    
+            var marker_19120eac8aad86ef1393e1fde6351428 = L.marker(
+                [22.28, 114.168],
+                {
+}
+            ).addTo(map_989f544abe54edbddce443779efd4643);
+        
+    
+            var icon_e4ce0bcb9e99832e848eff1bc730b510 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "warning-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_390139c5d9ae0fef2294dbc09ea24ba5 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_51fc6226e86fd155ecfcb4599f505528 = $(`<div id="html_51fc6226e86fd155ecfcb4599f505528" style="width: 100.0%; height: 100.0%;"><b>Protest Frontline Zone</b><br>Barricade lines repeatedly erected here; contested boundary between protesters and police.</div>`)[0];
+                popup_390139c5d9ae0fef2294dbc09ea24ba5.setContent(html_51fc6226e86fd155ecfcb4599f505528);
+            
+        
+
+        marker_19120eac8aad86ef1393e1fde6351428.bindPopup(popup_390139c5d9ae0fef2294dbc09ea24ba5)
+        ;
+
+        
+    
+    
+            marker_19120eac8aad86ef1393e1fde6351428.bindTooltip(
+                `<div>
+                     Citic Tower / Protest Frontline
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_19120eac8aad86ef1393e1fde6351428.setIcon(icon_e4ce0bcb9e99832e848eff1bc730b510);
+            
+    
+            var marker_345ee388b47960c8eaf359110e4e729a = L.marker(
+                [22.278, 114.1615],
+                {
+}
+            ).addTo(map_989f544abe54edbddce443779efd4643);
+        
+    
+            var icon_fbdb52ee3baa1c0e2b57faa1addb711d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d1628b9179fa5acfe8c94f85a6894e46 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_6c6925f0f2c52de779571c9eb8d6b9d9 = $(`<div id="html_6c6925f0f2c52de779571c9eb8d6b9d9" style="width: 100.0%; height: 100.0%;"><b>Central Government Offices</b><br>Key target of protest marches — symbol of Beijing authority over Hong Kong.</div>`)[0];
+                popup_d1628b9179fa5acfe8c94f85a6894e46.setContent(html_6c6925f0f2c52de779571c9eb8d6b9d9);
+            
+        
+
+        marker_345ee388b47960c8eaf359110e4e729a.bindPopup(popup_d1628b9179fa5acfe8c94f85a6894e46)
+        ;
+
+        
+    
+    
+            marker_345ee388b47960c8eaf359110e4e729a.bindTooltip(
+                `<div>
+                     Central Government Offices
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_345ee388b47960c8eaf359110e4e729a.setIcon(icon_fbdb52ee3baa1c0e2b57faa1addb711d);
+            
+    
+            var poly_line_25a6d9867863ed283a3f21acb9fa6dc2 = L.polyline(
+                [[22.2798, 114.162], [22.2797, 114.164], [22.2796, 114.166], [22.2795, 114.168]],
+                {"bubblingMouseEvents": true, "color": "#FF6600", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#FF6600", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 6}
+            ).addTo(map_989f544abe54edbddce443779efd4643);
+        
+    
+            poly_line_25a6d9867863ed283a3f21acb9fa6dc2.bindTooltip(
+                `<div>
+                     Harcourt Road — Occupied Protest Corridor
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_94a95f94acbcfb74f2118409b56b81da = L.circle(
+                [22.2792, 114.1625],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 80, "stroke": true, "weight": 3}
+            ).addTo(map_989f544abe54edbddce443779efd4643);
+        
+    
+            circle_94a95f94acbcfb74f2118409b56b81da.bindTooltip(
+                `<div>
+                     Civic Square — Contested Government Space
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>

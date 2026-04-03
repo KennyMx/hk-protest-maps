@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_077beab3e9d8ddf1881c39ad46b21d9d {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/iso8601-js-period@0.2.1/iso8601.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-timedimension@1.1.1/dist/leaflet.timedimension.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-timedimension@1.1.1/dist/leaflet.timedimension.control.css"/>
+</head>
+<body>
+    
+    
+<div style="position: fixed; top: 10px; left: 50%; transform: translateX(-50%);
+     background: rgba(0,0,0,0.88); color: white; padding: 12px 20px;
+     border-radius: 6px; font-family: Georgia, serif; z-index: 9999;
+     border-left: 4px solid #FF6600; text-align: center;">
+     <b style="font-size:14px;">MAP 5: Protest Escalation Timeline (2019–2020)</b><br>
+     <span style="font-size:11px; color:#aaa;">Use the time slider below to trace how protest spread across Hong Kong</span>
+</div>
+    
+            <div class="folium-map" id="map_077beab3e9d8ddf1881c39ad46b21d9d" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_077beab3e9d8ddf1881c39ad46b21d9d = L.map(
+                "map_077beab3e9d8ddf1881c39ad46b21d9d",
+                {
+                    center: [22.3193, 114.1694],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_8c08af106d5d4f79cec055a108deff25 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_8c08af106d5d4f79cec055a108deff25.addTo(map_077beab3e9d8ddf1881c39ad46b21d9d);
+        
+    
+            L.Control.TimeDimensionCustom = L.Control.TimeDimension.extend({
+                _getDisplayDateFormat: function(date){
+                    var newdate = new moment(date);
+                    console.log(newdate)
+                    return newdate.format("YYYY-MM-DD");
+                }
+            });
+            map_077beab3e9d8ddf1881c39ad46b21d9d.timeDimension = L.timeDimension(
+                {
+                    period: "P1M",
+                }
+            );
+            var timeDimensionControl = new L.Control.TimeDimensionCustom(
+                {
+  "position": "bottomleft",
+  "minSpeed": 0.1,
+  "maxSpeed": 1,
+  "autoPlay": false,
+  "loopButton": true,
+  "timeSliderDragUpdate": true,
+  "speedSlider": true,
+  "playerOptions": {
+  "transitionTime": 200,
+  "loop": false,
+  "startOver": true,
+},
+}
+            );
+            map_077beab3e9d8ddf1881c39ad46b21d9d.addControl(this.timeDimensionControl);
+
+            var geoJsonLayer = L.geoJson({"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [114.1628, 22.2797]}, "properties": {"time": "2019-06-09", "popup": "<b>June 9, 2019</b><br>1 million march against extradition bill \u2014 Central/Admiralty", "icon": "circle", "iconstyle": {"fillColor": "#FF4444", "fillOpacity": 0.9, "stroke": true, "radius": 10}}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [114.1628, 22.2797]}, "properties": {"time": "2019-06-12", "popup": "<b>June 12, 2019</b><br>LegCo siege \u2014 police use tear gas for first time. Admiralty.", "icon": "circle", "iconstyle": {"fillColor": "#FF6600", "fillOpacity": 0.9, "stroke": true, "radius": 12}}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [114.1628, 22.2797]}, "properties": {"time": "2019-06-16", "popup": "<b>June 16, 2019</b><br>2 million march \u2014 largest in Hong Kong history. Central to Admiralty.", "icon": "circle", "iconstyle": {"fillColor": "#FF0000", "fillOpacity": 1.0, "stroke": true, "radius": 16}}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [114.1617, 22.2804]}, "properties": {"time": "2019-07-01", "popup": "<b>July 1, 2019</b><br>Protesters storm LegCo \u2014 symbolic occupation of legislature.", "icon": "circle", "iconstyle": {"fillColor": "#FF0000", "fillOpacity": 1.0, "stroke": true, "radius": 14}}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [114.1694, 22.3193]}, "properties": {"time": "2019-07-07", "popup": "<b>July 7, 2019</b><br>Mong Kok protests \u2014 movement spreads to Kowloon.", "icon": "circle", "iconstyle": {"fillColor": "#FF6600", "fillOpacity": 0.9, "stroke": true, "radius": 11}}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [113.9185, 22.308]}, "properties": {"time": "2019-08-12", "popup": "<b>Aug 12, 2019</b><br>Airport occupation \u2014 hundreds of flights cancelled. Protest goes international.", "icon": "circle", "iconstyle": {"fillColor": "#FFD700", "fillOpacity": 0.9, "stroke": true, "radius": 14}}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [114.1863, 22.3832]}, "properties": {"time": "2019-09-21", "popup": "<b>Sept 2019</b><br>Sha Tin \u2014 New Town Plaza clashes; protests reach suburban New Territories.", "icon": "circle", "iconstyle": {"fillColor": "#FF8C00", "fillOpacity": 0.85, "stroke": true, "radius": 10}}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [114.1797, 22.3038]}, "properties": {"time": "2019-11-18", "popup": "<b>Nov 18, 2019</b><br>PolyU Siege \u2014 protesters barricaded inside Polytechnic University for 11 days.", "icon": "circle", "iconstyle": {"fillColor": "#FF0000", "fillOpacity": 1.0, "stroke": true, "radius": 15}}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [114.2068, 22.4195]}, "properties": {"time": "2019-11-12", "popup": "<b>Nov 12, 2019</b><br>CUHK Campus \u2014 police fired tear gas on campus grounds. Students defend university.", "icon": "circle", "iconstyle": {"fillColor": "#FF4444", "fillOpacity": 0.9, "stroke": true, "radius": 13}}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [114.1628, 22.2797]}, "properties": {"time": "2020-06-30", "popup": "<b>June 30, 2020</b><br>National Security Law passed \u2014 public protest criminalized. Movement ends in open form.", "icon": "circle", "iconstyle": {"fillColor": "#8B0000", "fillOpacity": 1.0, "stroke": true, "radius": 18}}}]}, {
+                    pointToLayer: function (feature, latLng) {
+                        if (feature.properties.icon == 'marker') {
+                            if(feature.properties.iconstyle){
+                                return new L.Marker(latLng, {
+                                    icon: L.icon(feature.properties.iconstyle)});
+                            }
+                            //else
+                            return new L.Marker(latLng);
+                        }
+                        if (feature.properties.icon == 'circle') {
+                            if (feature.properties.iconstyle) {
+                                return new L.circleMarker(latLng, feature.properties.iconstyle)
+                                };
+                            //else
+                            return new L.circleMarker(latLng);
+                        }
+                        //else
+
+                        return new L.Marker(latLng);
+                    },
+                    style: function (feature) {
+                        return feature.properties.style;
+                    },
+                    onEachFeature: function(feature, layer) {
+                        if (feature.properties.popup) {
+                        layer.bindPopup(feature.properties.popup);
+                        }
+                        if (feature.properties.tooltip) {
+                        layer.bindTooltip(feature.properties.tooltip);
+                        }
+                    }
+                })
+
+            var timestamped_geo_json_f772409b5edf3e6dde8d598df38a7161 = L.timeDimension.layer.geoJson(
+                geoJsonLayer,
+                {
+                    updateTimeDimension: true,
+                    addlastPoint: true,
+                    duration: undefined,
+                }
+            ).addTo(map_077beab3e9d8ddf1881c39ad46b21d9d);
+        
+</script>
+</html>

@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_53d2c4c7479782b8828c53a89b0c088f {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<div style="position: fixed; top: 10px; left: 50%; transform: translateX(-50%);
+     background: rgba(255,255,255,0.97); color: #111; padding: 12px 20px;
+     border-radius: 6px; font-family: Georgia, serif; z-index: 9999;
+     border-top: 4px solid #333; box-shadow: 0 2px 10px rgba(0,0,0,0.2); text-align: center;">
+     <b style="font-size:14px;">MAP 6: Synthesis — The People–Place Feedback Loop</b><br>
+     <span style="font-size:11px; color:#555;">Toggle layers to explore how people shaped place and place shaped people</span>
+</div>
+    
+<div style="position: fixed; bottom: 30px; left: 20px;
+     background: rgba(255,255,255,0.97); color: #222; padding: 12px;
+     border-radius: 6px; font-family: Georgia, serif; z-index: 9999;
+     font-size: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.15); border-top: 3px solid #333;">
+     <b>Feedback Loop</b><br>
+     <span style="color:#FF4444;">● People → Place (Protest Action)</span><br>
+     <span style="color:#4488FF;">● Place → People (Urban Infrastructure)</span><br>
+     <span style="color:#8B0000;">● NSL Restriction Zones (Post-2020)</span>
+</div>
+    
+            <div class="folium-map" id="map_53d2c4c7479782b8828c53a89b0c088f" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_53d2c4c7479782b8828c53a89b0c088f = L.map(
+                "map_53d2c4c7479782b8828c53a89b0c088f",
+                {
+                    center: [22.32, 114.1694],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_66d43909a06e19311531c1ee28b55e64 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_66d43909a06e19311531c1ee28b55e64.addTo(map_53d2c4c7479782b8828c53a89b0c088f);
+        
+    
+            var feature_group_8cf7bda5a727415afb00697ed37cad42 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_ffaed9b09d338239c58d2ca9eb455feb = L.circleMarker(
+                [22.2797, 114.1628],
+                {"bubblingMouseEvents": true, "color": "#FF4444", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF4444", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8cf7bda5a727415afb00697ed37cad42);
+        
+    
+        var popup_ef34b874b0dbbb7826625dea2b658200 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_3d414d231b6434ed63da823a3db0b089 = $(`<div id="html_3d414d231b6434ed63da823a3db0b089" style="width: 100.0%; height: 100.0%;"><b>Admiralty / LegCo</b><br><i>People → Place:</i><br>Protesters occupied government district, transforming civic space into resistance territory.</div>`)[0];
+                popup_ef34b874b0dbbb7826625dea2b658200.setContent(html_3d414d231b6434ed63da823a3db0b089);
+            
+        
+
+        circle_marker_ffaed9b09d338239c58d2ca9eb455feb.bindPopup(popup_ef34b874b0dbbb7826625dea2b658200)
+        ;
+
+        
+    
+    
+            circle_marker_ffaed9b09d338239c58d2ca9eb455feb.bindTooltip(
+                `<div>
+                     🔴 Admiralty / LegCo
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c8795018e6f85e5dfd61c75df4e39e4a = L.circleMarker(
+                [22.3193, 114.1694],
+                {"bubblingMouseEvents": true, "color": "#FF4444", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF4444", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8cf7bda5a727415afb00697ed37cad42);
+        
+    
+        var popup_dfc5fae7ae230a0df3d9319b9e040ea0 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_47b55fb450929c79cd03bb6ea7abe24d = $(`<div id="html_47b55fb450929c79cd03bb6ea7abe24d" style="width: 100.0%; height: 100.0%;"><b>Mong Kok</b><br><i>People → Place:</i><br>Protesters reclaimed commercial streets from state control.</div>`)[0];
+                popup_dfc5fae7ae230a0df3d9319b9e040ea0.setContent(html_47b55fb450929c79cd03bb6ea7abe24d);
+            
+        
+
+        circle_marker_c8795018e6f85e5dfd61c75df4e39e4a.bindPopup(popup_dfc5fae7ae230a0df3d9319b9e040ea0)
+        ;
+
+        
+    
+    
+            circle_marker_c8795018e6f85e5dfd61c75df4e39e4a.bindTooltip(
+                `<div>
+                     🔴 Mong Kok
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cb18c98f92279fccff9fd84e93e6c89b = L.circleMarker(
+                [22.3038, 114.1797],
+                {"bubblingMouseEvents": true, "color": "#FF4444", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF4444", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8cf7bda5a727415afb00697ed37cad42);
+        
+    
+        var popup_04fd66282cd1cb1a1d2cb1091451550a = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_c84bdde711f33ee3f63053cc6a02d876 = $(`<div id="html_c84bdde711f33ee3f63053cc6a02d876" style="width: 100.0%; height: 100.0%;"><b>PolyU (Siege)</b><br><i>People → Place:</i><br>Protesters fortified university campus — repurposing educational space as refuge.</div>`)[0];
+                popup_04fd66282cd1cb1a1d2cb1091451550a.setContent(html_c84bdde711f33ee3f63053cc6a02d876);
+            
+        
+
+        circle_marker_cb18c98f92279fccff9fd84e93e6c89b.bindPopup(popup_04fd66282cd1cb1a1d2cb1091451550a)
+        ;
+
+        
+    
+    
+            circle_marker_cb18c98f92279fccff9fd84e93e6c89b.bindTooltip(
+                `<div>
+                     🔴 PolyU (Siege)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_afc378a87ed9d8875506bf2bc3cc0782 = L.circleMarker(
+                [22.4195, 114.2068],
+                {"bubblingMouseEvents": true, "color": "#FF4444", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF4444", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8cf7bda5a727415afb00697ed37cad42);
+        
+    
+        var popup_72f87abf268ff6f0ce23fd1da9d5797f = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_65a3f3ec57a0b77a0a8acce0222cd3a4 = $(`<div id="html_65a3f3ec57a0b77a0a8acce0222cd3a4" style="width: 100.0%; height: 100.0%;"><b>CUHK</b><br><i>People → Place:</i><br>Students defended campus as a space of both learning and resistance.</div>`)[0];
+                popup_72f87abf268ff6f0ce23fd1da9d5797f.setContent(html_65a3f3ec57a0b77a0a8acce0222cd3a4);
+            
+        
+
+        circle_marker_afc378a87ed9d8875506bf2bc3cc0782.bindPopup(popup_72f87abf268ff6f0ce23fd1da9d5797f)
+        ;
+
+        
+    
+    
+            circle_marker_afc378a87ed9d8875506bf2bc3cc0782.bindTooltip(
+                `<div>
+                     🔴 CUHK
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_617f9c5019548b39e428ff8be3665605 = L.circleMarker(
+                [22.308, 113.9185],
+                {"bubblingMouseEvents": true, "color": "#FF4444", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF4444", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8cf7bda5a727415afb00697ed37cad42);
+        
+    
+        var popup_b9f99746b48ec3b8db61da2e893185bb = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_7d880b3cfee0a5dabb4ba8641165f5f7 = $(`<div id="html_7d880b3cfee0a5dabb4ba8641165f5f7" style="width: 100.0%; height: 100.0%;"><b>Airport</b><br><i>People → Place:</i><br>Protesters shut down international gateway — disrupting Hong Kong's global image.</div>`)[0];
+                popup_b9f99746b48ec3b8db61da2e893185bb.setContent(html_7d880b3cfee0a5dabb4ba8641165f5f7);
+            
+        
+
+        circle_marker_617f9c5019548b39e428ff8be3665605.bindPopup(popup_b9f99746b48ec3b8db61da2e893185bb)
+        ;
+
+        
+    
+    
+            circle_marker_617f9c5019548b39e428ff8be3665605.bindTooltip(
+                `<div>
+                     🔴 Airport
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_8cf7bda5a727415afb00697ed37cad42.addTo(map_53d2c4c7479782b8828c53a89b0c088f);
+        
+    
+            var feature_group_4c970ea9acddea190bf66389cba38bdd = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_faddd59bd09e7a6fa73b7a133b35db8c = L.circleMarker(
+                [22.2789, 114.165],
+                {"bubblingMouseEvents": true, "color": "#4488FF", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4488FF", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4c970ea9acddea190bf66389cba38bdd);
+        
+    
+        var popup_92ccfb09d9abf5b2b54e9e30ec23301d = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_96e230b28279eff990f750e2c8c1537c = $(`<div id="html_96e230b28279eff990f750e2c8c1537c" style="width: 100.0%; height: 100.0%;"><b>Admiralty MTR</b><br><i>Place → People:</i><br>Dense transit hub channeled thousands of protesters rapidly across the city.</div>`)[0];
+                popup_92ccfb09d9abf5b2b54e9e30ec23301d.setContent(html_96e230b28279eff990f750e2c8c1537c);
+            
+        
+
+        circle_marker_faddd59bd09e7a6fa73b7a133b35db8c.bindPopup(popup_92ccfb09d9abf5b2b54e9e30ec23301d)
+        ;
+
+        
+    
+    
+            circle_marker_faddd59bd09e7a6fa73b7a133b35db8c.bindTooltip(
+                `<div>
+                     🔵 Admiralty MTR
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5f509bbc86f55a5e0b216b4810f5243a = L.circleMarker(
+                [22.2802, 114.1837],
+                {"bubblingMouseEvents": true, "color": "#4488FF", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4488FF", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4c970ea9acddea190bf66389cba38bdd);
+        
+    
+        var popup_f14c437f0da3d84968d7efa0e129ed0f = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_82f14beb3fee278020fba6b7a37fc8b0 = $(`<div id="html_82f14beb3fee278020fba6b7a37fc8b0" style="width: 100.0%; height: 100.0%;"><b>Causeway Bay Shopping District</b><br><i>Place → People:</i><br>Commercial density enabled rapid dispersal and crowd camouflage tactics.</div>`)[0];
+                popup_f14c437f0da3d84968d7efa0e129ed0f.setContent(html_82f14beb3fee278020fba6b7a37fc8b0);
+            
+        
+
+        circle_marker_5f509bbc86f55a5e0b216b4810f5243a.bindPopup(popup_f14c437f0da3d84968d7efa0e129ed0f)
+        ;
+
+        
+    
+    
+            circle_marker_5f509bbc86f55a5e0b216b4810f5243a.bindTooltip(
+                `<div>
+                     🔵 Causeway Bay Shopping District
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d4e38fa5db0a52b87fd5f0c3907733e7 = L.circleMarker(
+                [22.2826, 114.1877],
+                {"bubblingMouseEvents": true, "color": "#4488FF", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4488FF", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4c970ea9acddea190bf66389cba38bdd);
+        
+    
+        var popup_981cefbcbb5f1e1f7e0457834679b958 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_82d32b078c6bd3991490eaf8f3e2b637 = $(`<div id="html_82d32b078c6bd3991490eaf8f3e2b637" style="width: 100.0%; height: 100.0%;"><b>Victoria Park</b><br><i>Place → People:</i><br>Traditional public space whose closure after NSL signaled the shrinking of civic life.</div>`)[0];
+                popup_981cefbcbb5f1e1f7e0457834679b958.setContent(html_82d32b078c6bd3991490eaf8f3e2b637);
+            
+        
+
+        circle_marker_d4e38fa5db0a52b87fd5f0c3907733e7.bindPopup(popup_981cefbcbb5f1e1f7e0457834679b958)
+        ;
+
+        
+    
+    
+            circle_marker_d4e38fa5db0a52b87fd5f0c3907733e7.bindTooltip(
+                `<div>
+                     🔵 Victoria Park
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_89a247001620bdeffde341ce7b3312b2 = L.circleMarker(
+                [22.3497, 114.185],
+                {"bubblingMouseEvents": true, "color": "#4488FF", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4488FF", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4c970ea9acddea190bf66389cba38bdd);
+        
+    
+        var popup_0008eb26912a166eaa6b871c8f0d622f = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_4ccff1540bb51ba4c2ea9d66199632f6 = $(`<div id="html_4ccff1540bb51ba4c2ea9d66199632f6" style="width: 100.0%; height: 100.0%;"><b>Lion Rock</b><br><i>Place → People:</i><br>Topography of hillside gave protesters high-visibility symbolic platform.</div>`)[0];
+                popup_0008eb26912a166eaa6b871c8f0d622f.setContent(html_4ccff1540bb51ba4c2ea9d66199632f6);
+            
+        
+
+        circle_marker_89a247001620bdeffde341ce7b3312b2.bindPopup(popup_0008eb26912a166eaa6b871c8f0d622f)
+        ;
+
+        
+    
+    
+            circle_marker_89a247001620bdeffde341ce7b3312b2.bindTooltip(
+                `<div>
+                     🔵 Lion Rock
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_318a172204628633a52870c0c057ca7e = L.circleMarker(
+                [22.2792, 114.1625],
+                {"bubblingMouseEvents": true, "color": "#4488FF", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4488FF", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4c970ea9acddea190bf66389cba38bdd);
+        
+    
+        var popup_85eec15fdd2bef564338eab25c1b9745 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_114ae61c50596ffaa31a3e81082cad57 = $(`<div id="html_114ae61c50596ffaa31a3e81082cad57" style="width: 100.0%; height: 100.0%;"><b>Civic Square (Fenced)</b><br><i>Place → People:</i><br>Post-2014 fencing of Civic Square shaped protest tactics — absence of space as a political act.</div>`)[0];
+                popup_85eec15fdd2bef564338eab25c1b9745.setContent(html_114ae61c50596ffaa31a3e81082cad57);
+            
+        
+
+        circle_marker_318a172204628633a52870c0c057ca7e.bindPopup(popup_85eec15fdd2bef564338eab25c1b9745)
+        ;
+
+        
+    
+    
+            circle_marker_318a172204628633a52870c0c057ca7e.bindTooltip(
+                `<div>
+                     🔵 Civic Square (Fenced)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_4c970ea9acddea190bf66389cba38bdd.addTo(map_53d2c4c7479782b8828c53a89b0c088f);
+        
+    
+            var feature_group_b4b1d5fde0c08551b85849375d7e36e8 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_37f7ac4414b31460e0dce9452f8d5d63 = L.circle(
+                [22.2797, 114.1628],
+                {"bubblingMouseEvents": true, "color": "#8B0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8B0000", "fillOpacity": 0.12, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 600, "stroke": true, "weight": 3}
+            ).addTo(feature_group_b4b1d5fde0c08551b85849375d7e36e8);
+        
+    
+            circle_37f7ac4414b31460e0dce9452f8d5d63.bindTooltip(
+                `<div>
+                     Core NSL Enforcement Zone — protest criminalized after June 2020
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_8295cbf1c53c91e832f4cfe97e609212 = L.circle(
+                [22.3193, 114.1694],
+                {"bubblingMouseEvents": true, "color": "#8B0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8B0000", "fillOpacity": 0.1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 400, "stroke": true, "weight": 3}
+            ).addTo(feature_group_b4b1d5fde0c08551b85849375d7e36e8);
+        
+    
+            circle_8295cbf1c53c91e832f4cfe97e609212.bindTooltip(
+                `<div>
+                     Mong Kok — high-surveillance NSL zone
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_b4b1d5fde0c08551b85849375d7e36e8.addTo(map_53d2c4c7479782b8828c53a89b0c088f);
+        
+    
+            var layer_control_eabaaf5f62a92f53e0e035bf64f79d26_layers = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_66d43909a06e19311531c1ee28b55e64,
+                },
+                overlays :  {
+                    "People Shaping Place (Protest Sites)" : feature_group_8cf7bda5a727415afb00697ed37cad42,
+                    "Place Shaping People (Urban Infrastructure)" : feature_group_4c970ea9acddea190bf66389cba38bdd,
+                    "NSL Restriction Zones (Post-2020)" : feature_group_b4b1d5fde0c08551b85849375d7e36e8,
+                },
+            };
+            let layer_control_eabaaf5f62a92f53e0e035bf64f79d26 = L.control.layers(
+                layer_control_eabaaf5f62a92f53e0e035bf64f79d26_layers.base_layers,
+                layer_control_eabaaf5f62a92f53e0e035bf64f79d26_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": false,
+  "autoZIndex": true,
+}
+            ).addTo(map_53d2c4c7479782b8828c53a89b0c088f);
+
+        
+</script>
+</html>
